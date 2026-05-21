@@ -1,0 +1,391 @@
+:root {
+  --navy: #061b4d;
+  --navy-2: #0a2463;
+  --blue: #177dff;
+  --blue-2: #0052cc;
+  --sky: #eef6ff;
+  --soft: #f6f9ff;
+  --text: #203052;
+  --muted: #64748b;
+  --line: rgba(23, 125, 255, 0.14);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6vw;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(6, 27, 77, 0.07);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.nav a {
+  opacity: 0.78;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.nav a:hover {
+  opacity: 1;
+  color: var(--blue);
+}
+
+.hero {
+  position: relative;
+  min-height: 720px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 110px 6vw 90px;
+  background:
+    radial-gradient(circle at 72% 22%, rgba(23, 125, 255, 0.14), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: auto -12% 0 -12%;
+  height: 320px;
+  background: linear-gradient(120deg, transparent 20%, rgba(23, 125, 255, 0.10), transparent 74%);
+  transform: skewY(-6deg);
+}
+
+.heroGlow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(23, 125, 255, 0.16), transparent 65%);
+  top: 110px;
+  right: 8%;
+  filter: blur(4px);
+}
+
+.heroContent {
+  position: relative;
+  max-width: 1050px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--blue-2);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(46px, 7.2vw, 92px);
+  line-height: 0.98;
+  letter-spacing: -0.07em;
+  font-weight: 800;
+}
+
+.slogan {
+  max-width: 690px;
+  margin: 30px auto 0;
+  color: var(--muted);
+  font-size: clamp(18px, 2.1vw, 24px);
+  line-height: 1.5;
+}
+
+.primaryButton {
+  margin-top: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 18px 40px rgba(23, 125, 255, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 50px rgba(23, 125, 255, 0.28);
+}
+
+.section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 124px 6vw;
+}
+
+.sectionHeader {
+  max-width: 780px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+.sectionHeader h2,
+.caseStrip h2,
+.contact h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(34px, 4.2vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.featureCard,
+.focusCard {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  box-shadow: 0 16px 46px rgba(6, 27, 77, 0.06);
+}
+
+.featureCard {
+  min-height: 230px;
+  border-radius: 30px;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.iconBox {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: var(--blue);
+  background: rgba(23, 125, 255, 0.08);
+}
+
+.featureCard h3 {
+  margin: 28px 0 0;
+  color: var(--navy);
+  font-size: 24px;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.focusSection {
+  padding-top: 70px;
+}
+
+.focusGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.focusCard {
+  min-height: 146px;
+  border-radius: 26px;
+  display: grid;
+  place-items: center;
+  gap: 14px;
+  padding: 24px 14px;
+  color: var(--blue-2);
+}
+
+.focusCard span {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.caseStrip {
+  max-width: 1180px;
+  margin: 20px auto 0;
+  padding: 50px 6vw;
+  border-radius: 34px;
+  background: linear-gradient(135deg, #f5f9ff 0%, #ffffff 100%);
+  border: 1px solid rgba(23, 125, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 38px;
+}
+
+.caseStrip p:last-child {
+  max-width: 430px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.contact {
+  padding: 100px 6vw 44px;
+}
+
+.contactCard {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 74px 8vw;
+  border-radius: 40px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 78% 20%, rgba(23, 125, 255, 0.18), transparent 36%),
+    linear-gradient(135deg, var(--navy) 0%, #0b2b78 52%, var(--blue-2) 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.contactCard .eyebrow,
+.contactCard h2 {
+  color: white;
+}
+
+.contactCard p {
+  max-width: 580px;
+  margin: 22px auto 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.contactCard .primaryButton {
+  background: white;
+  color: var(--navy);
+  box-shadow: none;
+}
+
+.footer {
+  max-width: 980px;
+  margin: 34px auto 0;
+  padding: 28px 0 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer strong {
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .header {
+    height: auto;
+    padding: 18px 5vw;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .brand img {
+    height: 48px;
+  }
+
+  .nav {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 14px 18px;
+    font-size: 10px;
+  }
+
+  .hero {
+    min-height: 640px;
+    padding-top: 86px;
+  }
+
+  .whyGrid,
+  .focusGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .caseStrip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .caseStrip p:last-child {
+    max-width: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .hero h1 {
+    letter-spacing: -0.045em;
+  }
+
+  .section {
+    padding: 84px 5vw;
+  }
+
+  .featureCard {
+    min-height: 190px;
+  }
+
+  .contactCard {
+    padding: 56px 7vw;
+    border-radius: 30px;
+  }
+}
